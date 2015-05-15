@@ -1,0 +1,128 @@
+{
+    "properties": [
+        {
+            "modifiers": [], 
+            "name": "keyword", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 9, 
+                "line": 6
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [], 
+            "name": "searchResults", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 7
+            }, 
+            "type": "LIST"
+        }
+    ], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [
+        {
+            "modifiers": [], 
+            "name": "CasesController", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 9, 
+                "line": 2
+            }, 
+            "type": null
+        }
+    ], 
+    "namespace": null, 
+    "name": "CasesController", 
+    "tableDeclaration": {
+        "type": "CasesController", 
+        "modifiers": [], 
+        "references": [], 
+        "location": {
+            "column": 15, 
+            "line": 1
+        }, 
+        "name": "CasesController"
+    }, 
+    "key": "01p1a000001ETawAAG", 
+    "variables": [
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 32, 
+                "line": 13
+            }, 
+            "name": "s"
+        }
+    ], 
+    "id": "01p1a000001ETawAAG", 
+    "methods": [
+        {
+            "modifiers": [], 
+            "name": "getKeyword", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 9
+            }, 
+            "returnType": "String", 
+            "type": null
+        }, 
+        {
+            "modifiers": [], 
+            "name": "setKeyword", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "s"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 14, 
+                "line": 13
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [], 
+            "name": "getSearchResults", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 17
+            }, 
+            "returnType": "LIST", 
+            "type": null
+        }, 
+        {
+            "modifiers": [], 
+            "name": "SearchNow", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 21
+            }, 
+            "returnType": "PageReference", 
+            "type": null
+        }
+    ]
+}

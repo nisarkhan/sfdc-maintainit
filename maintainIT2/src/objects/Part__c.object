@@ -1,0 +1,2491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Parts Master</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ABC_Code__c</fullName>
+        <description>ABC Code - User Specified</description>
+        <externalId>false</externalId>
+        <inlineHelpText>ABC Code - User Specified</inlineHelpText>
+        <label>ABC Code</label>
+        <picklist>
+            <picklistValues>
+                <fullName>A</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Auto_Order__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>If Auto Order = True, then this Part will be available for the Batch Purchase Order create process.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If Auto Order = True, then this Part will be available for the Batch Purchase Order create process.</inlineHelpText>
+        <label>Auto Order</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Available_Qty__c</fullName>
+        <description>Available Qty = On Hand Qty - Open Commit Qty</description>
+        <externalId>false</externalId>
+        <formula>IF( On_Hand_Qty__c  -  Open_Commit_Qty__c  &lt; 0, 0, On_Hand_Qty__c  -  Open_Commit_Qty__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Available Qty = On Hand Qty - Open Commit Qty</inlineHelpText>
+        <label>Available Qty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bin_Location__c</fullName>
+        <description>Bin Location - Concatenated String of Bin Seg 1 thru Bin Seg 5</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Loc_1__c)   &amp; &quot;-&quot; &amp;  TEXT(Loc_2__c) &amp; &quot;-&quot; &amp;  TEXT(Loc_3__c) &amp; &quot;-&quot; &amp;  TEXT(Loc_4__c)   &amp; &quot;-&quot; &amp;  TEXT(Loc_5__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Bin Location - Concatenated String of Loc 1 thru Loc 5</inlineHelpText>
+        <label>Bin Location-Deprecated</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Commodity_Code__c</fullName>
+        <description>Commodity Code - User Specified</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Commodity Code - User Specified</inlineHelpText>
+        <label>Commodity Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Criticality_Code__c</fullName>
+        <description>User Definable Criticality Code to Support RCM Processes</description>
+        <externalId>false</externalId>
+        <inlineHelpText>User Definable Criticality Code to Support RCM Processes</inlineHelpText>
+        <label>Criticality Code</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Cycle_Count_Group__c</fullName>
+        <description>Cycle Count Group is a user defined picklist for categorizing parts for cycle count selection</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Cycle Count Group is a user defined picklist for categorizing parts for cycle count selection</inlineHelpText>
+        <label>Cycle Count Group</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Jan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Feb</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Apr</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>May</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jun</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>July</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aug</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sept</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oct</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nov</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dec</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Part Description - User Defined</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Part Description</inlineHelpText>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ERP_Part__c</fullName>
+        <description>Non-Validated Part # used in external ERP/Purchasing system</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Non-Validated Part # used in external ERP/Purchasing system</inlineHelpText>
+        <label>ERP Part #</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ID_Description__c</fullName>
+        <description>Part ID &amp; Description Concatenated for ease of Grouping on Reports</description>
+        <externalId>false</externalId>
+        <formula>Name &amp; &quot; &quot; &amp;  Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Part ID &amp; Description Concatenated for ease of Grouping on Reports</inlineHelpText>
+        <label>ID &amp; Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Master__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Item Master</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Item Master</inlineHelpText>
+        <label>Item Master</label>
+        <referenceTo>Item_Master__c</referenceTo>
+        <relationshipLabel>Storeroom Parts</relationshipLabel>
+        <relationshipName>Storeroom_Parts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Last_Cycle_Count_Date__c</fullName>
+        <description>Last Cycle Count Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Cycle Count Date</inlineHelpText>
+        <label>Last Cycle Count Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_Gain_Date__c</fullName>
+        <description>Last Gain Date. Populated via work flow.  Field should be set to Read Only for all user profiles.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Gain Date. Populated via work flow.</inlineHelpText>
+        <label>Last Gain Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_In_Cost__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <description>Last In Cost (based on the Unit Cost during the last Receipt type Part Transaction).  System populated via workflow.  Field security should be set to read only for all profiles.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last In Cost (based on the Unit Cost during the last Receipt type Part Transaction).  System populated via workflow.  Field security should be set to read only for all profiles.</inlineHelpText>
+        <label>Last In Cost</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Last_Issue_Date__c</fullName>
+        <description>Last Issue Date.  System populated via workflow.  Field security should be set to read only for all profiles.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Issue Date.  System populated via workflow.  Field security should be set to read only for all profiles.</inlineHelpText>
+        <label>Last Issue Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_Order_Date__c</fullName>
+        <description>Last Order Date.  System populated via workflow. Field security should be set to read only for all profiles.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Order Date.  System populated via workflow. Field security should be set to read only for all profiles.</inlineHelpText>
+        <label>Last Order Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_Price_Update__c</fullName>
+        <description>Last Date when Purchase Price from Preferred Vendor was updated.  System populated via Workflow.  Field security should be set to Read Only for all User Profiles.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Date when Purchase Price from Preferred Vendor was updated.  System populated via Workflow.  Field security should be set to Read Only for all User Profiles.</inlineHelpText>
+        <label>Last Price Update</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_Receipt_Date__c</fullName>
+        <description>Last Receipt Date.  System populated via workflow. Field security should be set to read only for all profiles.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Receipt Date.  System populated via workflow. Field security should be set to read only for all profiles.</inlineHelpText>
+        <label>Last Receipt Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_Shrink_Date__c</fullName>
+        <description>Last Shrink Date will be populated via workflow when a Part Transaction of type Shrink will be created.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Shrink Date will be populated via workflow when a Part Transaction of type Shrink will be created</inlineHelpText>
+        <label>Last Shrink Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Time__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Lead Time (Days)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lead Time in Days</inlineHelpText>
+        <label>Lead Time</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Loc_1__c</fullName>
+        <description>Location 1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Row (Segment 1 of Row-Section-Level-Bin-Divider)</inlineHelpText>
+        <label>Row-Deprecated</label>
+        <picklist>
+            <picklistValues>
+                <fullName>01</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>07</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>08</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>09</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>13</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>14</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>15</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>16</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>17</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>18</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>19</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>20</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Loc_2__c</fullName>
+        <description>Location 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Section (Segment 2 of Row-Section-Level-Bin-Divider)</inlineHelpText>
+        <label>Section-Deprecated</label>
+        <picklist>
+            <picklistValues>
+                <fullName>A</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>E</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>G</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>I</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>J</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>L</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>O</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>T</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>V</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>W</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>X</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Y</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Z</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Loc_3__c</fullName>
+        <description>Location 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Level; Shelf or Drawer (Segment 3 of Row-Section-Level-Bin-Divider)</inlineHelpText>
+        <label>Level-Deprecated</label>
+        <picklist>
+            <picklistValues>
+                <fullName>01</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>07</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>08</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>09</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>13</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>14</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>15</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>16</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>17</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>18</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>19</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>20</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Loc_4__c</fullName>
+        <description>Location 4 - DEPRECATED - DO NOT USE</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Bin (Segment 4 of Row-Section-Level-Bin-Divider)</inlineHelpText>
+        <label>Bin-Deprecated</label>
+        <picklist>
+            <picklistValues>
+                <fullName>A</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>E</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>G</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>I</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>J</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>L</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>O</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>T</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>V</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>W</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>X</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Y</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Z</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Loc_5__c</fullName>
+        <description>Location 5</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Divider (Segment 5 of Row-Section-Level-Bin-Divider)</inlineHelpText>
+        <label>Divider-Deprecated</label>
+        <picklist>
+            <picklistValues>
+                <fullName>01</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>07</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>08</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>09</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Manufacturer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Part Manufacturer.  Lookup to Account where Manufacturer = True</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Part Manufacturer.  Lookup to Account where Manufacturer = True</inlineHelpText>
+        <label>Manufacturer</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.Manufacturer__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Manufacturer Parts</relationshipLabel>
+        <relationshipName>Mfg_Parts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Max_Qty__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Maximum desired &quot;Available&quot; Qty for inventory replenishment calculations</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Obsolete Field - Do Not Use</inlineHelpText>
+        <label>Obsolete</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mfg_Part__c</fullName>
+        <description>Manufacturer Part #</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Manufacturer Part #</inlineHelpText>
+        <label>Mfg Part #</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Min_Qty__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Minimum desired &quot;Available&quot; Qty for inventory replenishment calculations</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Obsolete Field - Do Not Use</inlineHelpText>
+        <label>Obsolete</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Nameplate_Data__c</fullName>
+        <description>The Nameplate Data field allows you to enter up to 255 characters of information about the part on separate lines. - User Defined</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Nameplate Data field allows you to enter up to 255 characters of information about the part on separate lines.</inlineHelpText>
+        <label>Nameplate Data</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Old_Part__c</fullName>
+        <description>This field is used for holding the old (legacy) part number from a previous system</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is used for holding the old (legacy) part number from a previous system</inlineHelpText>
+        <label>Old Part #</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>On_Hand_Qty_Value__c</fullName>
+        <description>On Hand Qty Value = Unit Value * On Hand Qty</description>
+        <externalId>false</externalId>
+        <formula>Unit_Value__c  *   On_Hand_Qty__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>On Hand Qty Value = Unit Value * On Hand Qty</inlineHelpText>
+        <label>On Hand Qty Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>On_Hand_Qty__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>On Hand Qty measured in Stock UOM.  System populated via workflow.  Field security should be set to read only for all profiles.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>On Hand Qty.  System pupoluated via workflow.  Field security should be set to read only for all profiles.</inlineHelpText>
+        <label>On Hand Qty</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>On_Order_Qty__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>On Order Qty = Sum of Order Qty - Sum of Receipt Qty measured in Stock UOM.  System populated value via workflow.  Field security should be set to read only for all profiles.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>On Order Qty = Sum of Order Qty - Sum of Receipt Qty.  System populated value via workflow.  Field security should be set to read only for all profiles.</inlineHelpText>
+        <label>On Order Qty</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Open_Commit_Qty__c</fullName>
+        <description>This Qty represents the value of all open qty&apos;s on work orders in a status beyond &quot;In Planning&quot; and not yet &quot;Completed&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This Qty represents the value of all open qty&apos;s on work orders in a status beyond &quot;In Planning&quot; and not yet &quot;Completed&quot;</inlineHelpText>
+        <label>Open Commit Qty</label>
+        <summarizedField>WO_Part__c.Open_Commit_Qty__c</summarizedField>
+        <summaryForeignKey>WO_Part__c.Part__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Bin_Loc_OH_Qty__c</fullName>
+        <description>On Hand Qty contained in the Primary Bin Location</description>
+        <externalId>false</externalId>
+        <formula>Primary_Bin_Location__r.On_Hand_Qty__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Primary Bin Loc OH Qty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Bin_Location__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Mass issuing parts from the Work Order (Issue Open Commit Qty command button) will be performed against the Primary Bin Location.  Purchase Order receipts will only be received to the Primary Bin Location.</description>
+        <externalId>false</externalId>
+        <label>Primary Bin Location</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Id</field>
+                <operation>equals</operation>
+                <valueField>Warehouse_Bin_Location__c.Part__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Warehouse_Bin_Location__c</referenceTo>
+        <relationshipLabel>Parts</relationshipLabel>
+        <relationshipName>Parts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Purchase_Price__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <description>Purchase Price from Preferred Vendor.  Based on Purchase UOM.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Purchase Price from Preferred Vendor</inlineHelpText>
+        <label>Purchase Price</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Purchase_UOM__c</fullName>
+        <description>The Purchase UOM is UOM in which Purchase Orders Lines are specified and Purchase Order Transactions occur.  Purchase Order Transactions are extended by the Purchase Pack Qty.  Values adopted from ANSI X12.3 Code List 355 Unit of Measure.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Purchase UOM is UOM in which Purchase Orders Lines are specified and Purchase Order Transactions occur.  Purchase Order Transactions are extended by the Purchase Pack Qty.  Values adopted from ANSI X12.3 Code List 355 Unit of Measure.</inlineHelpText>
+        <label>Purchase UOM</label>
+        <picklist>
+            <picklistValues>
+                <fullName>AY - Assembly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BX - Box</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA - Case</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CH - Container</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM - Centimeter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CN - Can</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CT - Carton</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DZ - Dozen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EA - Each</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FT - Foot</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GA - Gallon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GS - Gross</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN - Inch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KT - Kit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LB - Pound</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LT - Liter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR - Meter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OL - Ounces Liquid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PC - Piece</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PK - Package</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL - Pallet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT - Pint</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QT - Quart</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RE - Reel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RL - Roll</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RM - Ream</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SH - Sheet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TY - Tray</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UN - Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>YD - Yard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reorder_Method__c</fullName>
+        <description>Reorder Method is used to calculate the Qty to Order of a part - DO NOT EDIT THE AVAILABLE VALUES IN THIS LIST!.  OP-OQ is currently the ONLY valid method and is the default value.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reorder Method is used to calculate the Qty to Order of a part - DO NOT EDIT THE AVAILABLE VALUES IN THIS LIST!.  OP-OQ is currently the ONLY valid method and is the default value.</inlineHelpText>
+        <label>Reorder Method</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Min-Max</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP-OQ</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reorder_Point__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The Min Qty represents the Qty that the Available Qty + On Order Qty must be equal to before a reccomended &quot;Qty to Order&quot; is calculated.  Measured in Stock UOM.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Min Qty represents the Qty that the Available Qty + On Order Qty must be equal to before a reccomended &quot;Qty to Order&quot; is calculated.</inlineHelpText>
+        <label>Min Qty</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reorder_Qty__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>The &quot;Purchase Pack Qty&quot; is the Stock UOM to Purchase UOM Conversion Qty.  Value can NOT be updated if the On Order Qty &gt; 0</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Fixed Order Interval is the &quot;Fixed Qty&quot; amount that will be used to suggest the &quot;Qty to Reorder&quot; when the Reorder Point threshold is met.</inlineHelpText>
+        <label>Purchase Pack Qty</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Secondary_Bin_Loc_OH_Qty__c</fullName>
+        <description>On Hand Qty in ALL Secondary Bin Locations</description>
+        <externalId>false</externalId>
+        <formula>On_Hand_Qty__c  -  Primary_Bin_Loc_OH_Qty__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>On Hand Qty in all Secondary Bin Locations</inlineHelpText>
+        <label>Secondary Bin Loc OH Qty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Standard_Cost__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <description>Standard Cost - User Specified.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Standard Cost - User Specified.</inlineHelpText>
+        <label>Standard Cost</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Status of Part - DO NOT EDIT THE AVAILABLE VALUES IN THIS LIST!  Unexpected results will occur.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status of Part - DO NOT EDIT THE AVAILABLE VALUES IN THIS LIST!  Unexpected results will occur.</inlineHelpText>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Stock_UOM__c</fullName>
+        <description>The Stock UOM is also the Primary UOM and MUST be lowest level of Unit of Measure.  All &quot;Part Transactions&quot; occur in the Stock/Primary UOM.  Values adopted from ANSI X12.3 Code List 355 Unit of Measure.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Stock UOM is also the Primary UOM and MUST be lowest level of Unit of Measure.  All &quot;Part Transactions&quot; occur in the Stock/Primary UOM.  Values adopted from ANSI X12.3 Code List 355 Unit of Measure.</inlineHelpText>
+        <label>Stock UOM</label>
+        <picklist>
+            <picklistValues>
+                <fullName>AY - Assembly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BX - Box</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA - Case</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CH - Container</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM - Centimeter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CN - Can</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CT - Carton</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DZ - Dozen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EA - Each</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FT - Foot</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GA - Gallon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GS - Gross</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN - Inch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KT - Kit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LB - Pound</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LT - Liter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR - Meter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OL - Ounces Liquid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PC - Piece</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PK - Package</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL - Pallet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT - Pint</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QT - Quart</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RE - Reel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RL - Roll</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RM - Ream</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SH - Sheet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TY - Tray</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UN - Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>YD - Yard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Storeroom_Description__c</fullName>
+        <description>Formula Reference to Storeroom Description</description>
+        <externalId>false</externalId>
+        <formula>Warehouse__r.Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Formula Reference to Storeroom Description</inlineHelpText>
+        <label>Storeroom Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unit_Value__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Unit Value of a Part item used to calculate costs associated with an issue/adjustment transaction and to value on hand inventory.  System populated via workflow.  Field security should be set to read only for all profiles.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Unit Value of a Part item used to calculate costs associated with an issue/adjustment transaction and to value on hand inventory.  System populated via workflow.  Field security should be set to read only for all profiles.</inlineHelpText>
+        <label>Unit Value</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Valuation_Method__c</fullName>
+        <description>The Valuation Method is used to define which of the Part Costs are used for the Unit Cost - DO NOT EDIT THE AVAILABLE VALUES IN THIS LIST!  Unexpected results will occur.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Valuation Method is used to define which of the Part Costs are used for the Unit Cost - DO NOT EDIT THE AVAILABLE VALUES IN THIS LIST!  Unexpected results will occur.</inlineHelpText>
+        <label>Valuation Method</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Last In</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Weighted Average</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Vendor_Part__c</fullName>
+        <description>Preferred Vendor Part #</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Vendor Part #</inlineHelpText>
+        <label>Preferred Vendor Part #</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vendor_Preferred__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Preferred Part Vendor.  Lookup to Accounts where Vendor = True</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Preferred Part Vendor.  Lookup to Accounts where Vendor = True</inlineHelpText>
+        <label>Preferred Vendor</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.Vendor__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Vendor Parts</relationshipLabel>
+        <relationshipName>Vendor_Parts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Vendor_Secondary_Part__c</fullName>
+        <description>Secondary Vendor Part #</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Secondary Vendor Part #</inlineHelpText>
+        <label>Secondary Vendor Part #</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vendor_Secondary__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Secondary Vendor for Part - Lookup to Account with optional filter of Vendor = &quot;True&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Secondary Vendor for Part - Lookup to Account with optional filter of Vendor = &quot;True&quot;</inlineHelpText>
+        <label>Secondary Vendor</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.Vendor__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Parts (Secondary Vendor)</relationshipLabel>
+        <relationshipName>Vendor_Secondary_Parts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Vendor_Tertiary_Part__c</fullName>
+        <description>Tertiary Vendor Part #</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Tertiary Vendor Part #</inlineHelpText>
+        <label>Tertiary Vendor Part #</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vendor_Tertiary__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Tertiary Vendor for Part - Lookup to Account with optional filter of Vendor = &quot;True&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Tertiary Vendor for Part - Lookup to Account with optional filter of Vendor = &quot;True&quot;</inlineHelpText>
+        <label>Tertiary Vendor</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.Vendor__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Parts (Tertiary Vendor)</relationshipLabel>
+        <relationshipName>Vendor_Tertiary_Parts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Warehouse__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Warehouse</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup to Warehouse</inlineHelpText>
+        <label>Storeroom</label>
+        <referenceTo>Warehouse__c</referenceTo>
+        <relationshipLabel>Parts</relationshipLabel>
+        <relationshipName>Parts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Weighted_Avg_Cost__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <description>Weighted Average Cost based on Receipt Transactions.  System populated value via workflow.  Field security should be set to read only for all profiles.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Weighted Average Cost based on Receipt Transactions.  System populated value via workflow.  Field security should be set to read only for all profiles.</inlineHelpText>
+        <label>Weighted Avg Cost</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Part</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Parts_Open_Orders</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Vendor_Preferred__c</columns>
+        <columns>Vendor_Part__c</columns>
+        <columns>On_Order_Qty__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>On_Order_Qty__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </filters>
+        <label>Parts with Open Orders</label>
+    </listViews>
+    <nameField>
+        <label>Part ID</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Parts</pluralLabel>
+    <recordTypes>
+        <fullName>Stock_Item</fullName>
+        <active>true</active>
+        <description>This record type represents a part that can be inventoried</description>
+        <label>Stock Item</label>
+        <picklistValues>
+            <picklist>ABC_Code__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Criticality_Code__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cycle_Count_Group__c</picklist>
+            <values>
+                <fullName>Apr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dec</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feb</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>July</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jun</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>May</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nov</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sept</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Loc_1__c</picklist>
+            <values>
+                <fullName>01</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>02</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>07</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>17</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Loc_2__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>G</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>J</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>K</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>L</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>O</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>V</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>W</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Y</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Z</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Loc_3__c</picklist>
+            <values>
+                <fullName>01</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>02</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>07</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>17</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Loc_4__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>G</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>J</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>K</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>L</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>O</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>V</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>W</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Y</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Z</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Loc_5__c</picklist>
+            <values>
+                <fullName>01</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>02</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>07</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Purchase_UOM__c</picklist>
+            <values>
+                <fullName>AY - Assembly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BX - Box</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CH - Container</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CM - Centimeter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CN - Can</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CT - Carton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DZ - Dozen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EA - Each</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>FT - Foot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GA - Gallon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GS - Gross</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IN - Inch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KT - Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LB - Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LT - Liter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MR - Meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OL - Ounces Liquid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PC - Piece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PK - Package</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL - Pallet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT - Pint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QT - Quart</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RE - Reel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RL - Roll</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RM - Ream</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SH - Sheet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TY - Tray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UN - Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>YD - Yard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reorder_Method__c</picklist>
+            <values>
+                <fullName>OP-OQ</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stock_UOM__c</picklist>
+            <values>
+                <fullName>AY - Assembly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BX - Box</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA - Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CH - Container</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CM - Centimeter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CN - Can</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CT - Carton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DZ - Dozen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EA - Each</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>FT - Foot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GA - Gallon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GS - Gross</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IN - Inch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KT - Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LB - Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LT - Liter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MR - Meter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OL - Ounces Liquid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PC - Piece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PK - Package</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL - Pallet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT - Pint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QT - Quart</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RE - Reel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RL - Roll</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RM - Ream</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SH - Sheet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TY - Tray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UN - Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>YD - Yard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Valuation_Method__c</picklist>
+            <values>
+                <fullName>Last In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weighted Average</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Bin_Location__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>On_Hand_Qty__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Reorder_Point__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>On_Order_Qty__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <listViewButtons>Generate_PO_s</listViewButtons>
+        <lookupDialogsAdditionalFields>Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Warehouse__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Bin_Location__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>On_Hand_Qty__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Description__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Description__c</searchFilterFields>
+        <searchFilterFields>Warehouse__c</searchFilterFields>
+        <searchFilterFields>Bin_Location__c</searchFilterFields>
+        <searchFilterFields>On_Hand_Qty__c</searchFilterFields>
+        <searchResultsAdditionalFields>Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Warehouse__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Bin_Location__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>On_Hand_Qty__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Min_Qty_NonNegative</fullName>
+        <active>false</active>
+        <description>Test to ensure that the Min Qty is a non-negative value (Obsolete - Field Deprecated)</description>
+        <errorConditionFormula>Min_Qty__c   &lt;  0</errorConditionFormula>
+        <errorDisplayField>Min_Qty__c</errorDisplayField>
+        <errorMessage>Min Qty cannot be a negative value (Obsolete)</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Purchase_Pack_Qty_Update</fullName>
+        <active>true</active>
+        <description>Ensures that the Purchase Pack Qty cannot be Updated when the On Order Qty is Greater than Zero</description>
+        <errorConditionFormula>ISCHANGED( Reorder_Qty__c )  &amp;&amp;  On_Order_Qty__c  &gt; 0</errorConditionFormula>
+        <errorDisplayField>Reorder_Qty__c</errorDisplayField>
+        <errorMessage>The Purchase Pack Qty cannot be changed while the On Order Qty is Greater than Zero.  Please receive or cancel open purchase order line items.  The preferred approach is to create a new Part record with an updated Purchase Pack Qty</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Purchase_Price_GE_Zero</fullName>
+        <active>true</active>
+        <description>Ensures that the Purchase Price is Greater Than or Equal to Zero and Is Not Null</description>
+        <errorConditionFormula>Purchase_Price__c  &lt; 0 ||  ISNULL( Purchase_Price__c )</errorConditionFormula>
+        <errorDisplayField>Purchase_Price__c</errorDisplayField>
+        <errorMessage>The Purchase Price cannot be a Negative or a Null Value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ROQ_LE_One</fullName>
+        <active>true</active>
+        <description>The &quot;Purchase Pack Qty&quot; must be Greater Than or Equal to One (1)</description>
+        <errorConditionFormula>Reorder_Qty__c  &lt;= 0 ||  ISBLANK(Reorder_Qty__c)</errorConditionFormula>
+        <errorDisplayField>Reorder_Qty__c</errorDisplayField>
+        <errorMessage>The Purchase Pack Qty must be Greater Than or Equal to one (1)</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Reorder_Point_NonNegative</fullName>
+        <active>true</active>
+        <description>Ensures that the Min Qty is a Non-negative value.  The field labeled &quot;Min Qty&quot; is the Reorder Point Field</description>
+        <errorConditionFormula>Reorder_Point__c  &lt; 0</errorConditionFormula>
+        <errorDisplayField>Reorder_Point__c</errorDisplayField>
+        <errorMessage>The Min Qty must be Greater Than or Equal to zero (0)</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Standard_Cost_Non_Negative</fullName>
+        <active>true</active>
+        <description>Ensures that the Standard Cost for a Part is Greater Than or Equal to Zero (0).</description>
+        <errorConditionFormula>Standard_Cost__c  &lt; 0</errorConditionFormula>
+        <errorDisplayField>Standard_Cost__c</errorDisplayField>
+        <errorMessage>The Standard Cost must be Greater Than or Equal to Zero</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Generate_PO_s</fullName>
+        <availability>online</availability>
+        <description>This command button will generate the purchase order for all the parts with the ordered qty as qty to reorder for a part</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Generate PO&apos;s</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/apex.js&quot;)}
+
+// Get the List of PartIds selected by the User.
+var records= {!GETRECORDIDS($ObjectType.Part__c)};
+
+var len=records.length;
+
+//  Call the method if User has selected any record.
+if (len!= 0){
+          alert(&quot;Please wait while request is processing... &quot;); 
+          var res=sforce.apex.execute(&quot;sm1e.GeneratePurchaseOrders&quot;,&quot;GeneratePurchaseOrder&quot;,{PartIds:records});
+}else{
+          window.alert(&quot;At least one record must be selected&quot;);
+     }
+
+//  Reload the Window..
+
+if(res==&quot;true&quot;){
+           window.alert(&quot;PO Generation Submitted&quot;);
+           window.location.reload();
+
+}</url>
+    </webLinks>
+</CustomObject>

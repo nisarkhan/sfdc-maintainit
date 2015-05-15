@@ -1,0 +1,21 @@
+<apex:page showHeader="true" sidebar="true" controller="CasesController">
+	
+ 
+<apex:form>
+    <apex:pageBlock title="Serach">
+	<apex:inputText value="{!keyword}" />
+        <apex:commandButton value="Search" action="{!SearchNow}"/>
+
+	//detail after serach found:
+     <apex:pageBlock title="Results">
+	<apex:pageblockTable value="{!searchResults}" var="r">
+	   <apex:column value="{!r.Name}"/>
+	    <apex:column value="{!r.Type}"/>
+	    <apex:column value="{!r.Industry}"/>
+	    <apex:column value="{!r.Phone}"/>
+	    <apex:column value="{!r.Fax}"/>
+	</apex:pageBlockTable>
+      </apex:pageBlock>
+    </apex:pageblock>
+</apex:form>
+</apex:page>  

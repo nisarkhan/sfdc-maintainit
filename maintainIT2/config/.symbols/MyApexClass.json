@@ -1,0 +1,36 @@
+{
+    "properties": [], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [
+        {
+            "modifiers": [], 
+            "name": "MyApexClass", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 9, 
+                "line": 2
+            }, 
+            "type": null
+        }
+    ], 
+    "namespace": null, 
+    "name": "MyApexClass", 
+    "tableDeclaration": {
+        "type": "MyApexClass", 
+        "modifiers": [], 
+        "references": [], 
+        "location": {
+            "column": 27, 
+            "line": 1
+        }, 
+        "name": "MyApexClass"
+    }, 
+    "key": "01p1a000001ELUfAAO", 
+    "variables": [], 
+    "id": "01p1a000001ELUfAAO", 
+    "methods": []
+}

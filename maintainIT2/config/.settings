@@ -1,0 +1,19 @@
+{
+    "username": "nkhan@maintainit.org", 
+    "environment": "production", 
+    "project_name": "maintainIT2", 
+    "workspace": "c:\\Development\\ThingTech\\maintainIT", 
+    "org_url": "", 
+    "namespace": "", 
+    "id": "P16CLHCU2Y1TMCLXYDB3CGA04FHOPX9R", 
+    "metadata_container": "1dc1a00000093AMAAY", 
+    "subscription": [
+        "ApexClass", 
+        "ApexComponent", 
+        "ApexPage", 
+        "ApexTrigger", 
+        "StaticResource", 
+        "CustomObject", 
+        "Profile"
+    ]
+}

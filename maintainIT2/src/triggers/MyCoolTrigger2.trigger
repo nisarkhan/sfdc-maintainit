@@ -8,4 +8,5 @@ trigger MyCoolTrigger2 on Account (before insert, after update)
          	a.addError('not working with education anymore !!!');
        	}         
     }
+	//insert a;
 }
